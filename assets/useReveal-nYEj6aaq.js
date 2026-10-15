@@ -1,0 +1,1 @@
+function o(t,{delay:s=0}={}){if(!t)return;t.style.transitionDelay=`${s}ms`;const r=new IntersectionObserver(n=>{for(const e of n)e.isIntersecting&&(e.target.classList.add("is-in"),r.unobserve(e.target))},{threshold:.12,rootMargin:"0px 0px -8% 0px"});r.observe(t)}export{o as r};

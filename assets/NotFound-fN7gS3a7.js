@@ -1,0 +1,1 @@
+import{c as n,b as s,t as e,u as t,d as o,f as c,w as r,i as l,h as _,e as u}from"./index-BF6SM9xG.js";const i={class:"section center"},h={__name:"NotFound",setup(d){return(m,p)=>{const a=l("router-link");return _(),n("main",i,[s("h1",null,e(t(o).notFound),1),c(a,{class:"btn btn-gold",to:"/"},{default:r(()=>[u(e(t(o).backHome),1)]),_:1})])}}};export{h as default};
