@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ksa-360.com/sitemap.xml
