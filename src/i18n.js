@@ -52,7 +52,6 @@ const copy = {
     couponsLead: 'Perfume houses, groceries, car wash, fashion, electronics — then tap through to the shop. The coupon drawer lives in the app, not on the web.',
     notFound: 'This page wandered off into the dunes.',
     backHome: 'Back to KSA 360',
-    report: 'Made for expats · 13+',
   },
   ar: {
     navCoupons: 'كوبونات',
@@ -93,7 +92,6 @@ const copy = {
     couponsLead: 'عطور، بقالة، غسيل سيارات، أزياء، إلكترونيات. الدرج داخل التطبيق.',
     notFound: 'هذه الصفحة ضاعت في النفود.',
     backHome: 'العودة إلى KSA 360',
-    report: 'للمقيمين · +13',
   },
 }
 

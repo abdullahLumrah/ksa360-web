@@ -50,7 +50,6 @@ onUnmounted(() => clearInterval(timer))
         </h1>
         <p class="lead">{{ t.heroLead }}</p>
         <StoreButtons />
-        <p class="fine">{{ t.report }}</p>
       </div>
       <div class="hero-art" aria-hidden="false">
         <div class="orb" />
