@@ -264,7 +264,7 @@ h2 {
 
 .coupon-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
   margin-top: 36px;
 }
@@ -298,6 +298,21 @@ h2 {
 .ticket h3 { margin: 36px 0 6px; font-size: 1.05rem; }
 .ticket p { margin: 0; color: var(--muted); font-size: 0.88rem; }
 .ticket .shops { color: var(--gold); font-weight: 700; font-size: 0.8rem; margin-top: 10px; }
+.ticket .code-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ticket .code {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 800; letter-spacing: 0.06em;
+  color: var(--green-deep); background: var(--chip);
+  border: 1px dashed var(--green); padding: 8px 10px; border-radius: 10px;
+  cursor: pointer; text-align: start;
+}
+.ticket .code small {
+  font-family: inherit; font-weight: 600; letter-spacing: 0;
+  color: var(--muted); font-size: 0.68rem;
+}
+.ticket .code.copied { background: var(--green-deep); color: var(--on-dark); border-style: solid; }
+.ticket .code.copied small { color: rgba(247, 242, 232, 0.8); }
 
 .bento {
   display: grid;
@@ -367,7 +382,7 @@ h2 {
 .article h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; }
 .article p { line-height: 1.7; color: var(--ink); }
 .grid-cards {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 28px;
 }
 .card-link {
   display: block; padding: 22px; background: var(--card); border: 1px solid var(--stroke);

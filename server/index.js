@@ -23,17 +23,23 @@ function inject(html, path) {
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(seo.title)}</title>`)
     .replace(
-      /<meta name="description" content="[^"]*"\s*\/?>/,
+      /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/,
       `<meta name="description" content="${escapeHtml(seo.description)}" />`,
     )
-    .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${url}" />`)
-    .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escapeHtml(seo.title)}" />`)
+    .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${url}" />`)
     .replace(
-      /<meta property="og:description" content="[^"]*"\s*\/?>/,
+      /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:title" content="${escapeHtml(seo.title)}" />`,
+    )
+    .replace(
+      /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/,
       `<meta property="og:description" content="${escapeHtml(seo.description)}" />`,
     )
-    .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`)
-    .replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, `<meta property="og:image" content="${DEFAULT_IMAGE}" />`)
+    .replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`)
+    .replace(
+      /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:image" content="${DEFAULT_IMAGE}" />`,
+    )
 }
 
 function escapeHtml(value) {

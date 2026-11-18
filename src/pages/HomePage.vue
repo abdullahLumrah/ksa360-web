@@ -2,7 +2,10 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import StoreButtons from '../components/StoreButtons.vue'
 import { reveal } from '../composables/useReveal.js'
+import { useShops } from '../composables/useShops.js'
 import { t } from '../i18n.js'
+
+const { featured } = useShops()
 
 const shots = [
   { src: '/shots/home.jpg', alt: 'KSA 360 home — coupons and marketplace' },
@@ -14,12 +17,7 @@ const shots = [
 const idx = ref(0)
 let timer
 
-const tickets = [
-  { title: 'Perfumes & makeup', shops: '151 shops · 121 coupons' },
-  { title: 'Groceries', shops: '24 shops · 9 coupons' },
-  { title: 'Car wash', shops: '22 shops · 11 coupons' },
-  { title: 'Fashion & outlets', shops: '75 shops · 80 coupons' },
-]
+const tickets = featured
 
 const features = [
   { icon: '🏷', title: 'Daily in KSA', text: 'Coupons and brands — perfume, groceries, car wash, fashion — tap through in the app.' },
@@ -79,13 +77,18 @@ onUnmounted(() => clearInterval(timer))
       <h2 class="reveal">{{ t.wantCoupon }}</h2>
       <p class="lead reveal">{{ t.couponLead }}</p>
       <div class="coupon-grid">
-        <article v-for="(item, i) in tickets" :key="item.title" class="ticket reveal" :style="{ transitionDelay: i * 80 + 'ms' }">
-          <span class="stamp">{{ t.openApp }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>Unlock in Daily in KSA.</p>
-          <div class="shops">{{ item.shops }}</div>
+        <article v-for="(item, i) in tickets" :key="item.id" class="ticket reveal" :style="{ transitionDelay: i * 80 + 'ms' }">
+          <span class="stamp">{{ t.liveNow }}</span>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.coupons[0]?.title }}</p>
+          <div class="shops">{{ item.coupons.map((row) => row.code).join(' · ') }}</div>
         </article>
       </div>
+      <p class="fine reveal" style="margin-top: 18px">
+        <router-link to="/coupons">{{ t.navCoupons }}</router-link>
+        ·
+        <router-link to="/blog/white-friday-ksa-2026-coupons">{{ t.whiteFriday }}</router-link>
+      </p>
     </section>
 
     <section class="section" style="padding-top: 0">

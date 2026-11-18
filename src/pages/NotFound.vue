@@ -1,4 +1,5 @@
 <script setup>
+import StoreButtons from '../components/StoreButtons.vue'
 import { t } from '../i18n.js'
 </script>
 
@@ -6,5 +7,6 @@ import { t } from '../i18n.js'
   <main class="section center">
     <h1>{{ t.notFound }}</h1>
     <router-link class="btn btn-gold" to="/">{{ t.backHome }}</router-link>
+    <StoreButtons center />
   </main>
 </template>

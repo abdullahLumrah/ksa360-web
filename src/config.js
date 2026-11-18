@@ -2,11 +2,12 @@ export const SITE_URL = 'https://ksa-360.com'
 export const SITE_NAME = 'KSA 360'
 export const COMPANY = 'Lumrah'
 
-/** Replace when App Review / Play listing go live. */
+export const API_URL = 'https://api.lumrah.co'
+
 export const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.ksaguide.ksa360'
-export const APP_STORE_URL = 'https://apps.apple.com/app/ksa-360/id000000000'
-export const APP_STORE_READY = false
+export const APP_STORE_URL = 'https://apps.apple.com/sa/app/ksa-360/id6821753757'
+export const APP_STORE_READY = true
 
 export const PRIVACY_URL = 'https://api.lumrah.co/privacy'
 export const DELETE_URL = 'https://api.lumrah.co/delete-account'

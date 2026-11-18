@@ -10,6 +10,6 @@ import { t } from '../i18n.js'
     <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: -0.05em">{{ t.downloadTitle }}</h1>
     <p class="lead">{{ t.downloadLead }}</p>
     <StoreButtons center />
-    <p class="fine">Package: com.ksaguide.ksa360 · Lumrah</p>
+    <p class="fine">Package: com.ksaguide.ksa360 · App Store id 6821753757 · Lumrah</p>
   </main>
 </template>

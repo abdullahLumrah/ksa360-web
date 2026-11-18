@@ -1,4 +1,5 @@
 <script setup>
+import StoreButtons from '../components/StoreButtons.vue'
 import { posts } from '../content/posts.js'
 import { t } from '../i18n.js'
 </script>
@@ -14,6 +15,9 @@ import { t } from '../i18n.js'
         <h3>{{ post.title }}</h3>
         <p>{{ post.excerpt }}</p>
       </router-link>
+    </div>
+    <div style="margin-top: 36px">
+      <StoreButtons />
     </div>
   </main>
 </template>

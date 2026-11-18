@@ -10,7 +10,7 @@ const post = computed(() => posts.find((p) => p.slug === route.params.slug))
 
 <template>
   <main v-if="post" class="article">
-    <p class="kicker">{{ post.kicker }} · {{ post.read }}</p>
+    <p class="kicker">{{ post.kicker }} · {{ post.read }}<template v-if="post.published"> · {{ post.published }}</template></p>
     <h1>{{ post.title }}</h1>
     <p v-for="(para, i) in post.body" :key="i">{{ para }}</p>
     <StoreButtons />
